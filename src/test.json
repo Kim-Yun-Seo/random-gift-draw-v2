@@ -1,0 +1,17 @@
+[
+  {
+    "name": "kim",
+    "canGet": ["c", "d", "e", "f" ],
+    "gift": ["a", "b"]
+  },
+  {
+    "name": "lee",
+    "canGet": ["a", "b", "e", "f" ],
+    "gift": ["a", "b"]
+  },
+  {
+    "name": "yun",
+    "canGet": ["a", "b", "c", "d" ],
+    "gift": ["a", "b"]
+  }
+]
