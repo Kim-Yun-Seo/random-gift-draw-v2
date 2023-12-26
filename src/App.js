@@ -2,32 +2,19 @@ import logo from './logo.svg';
 import './App.css';
 import json from './test.json'
 import { ref, useState } from 'react';
+import { BrowserRouter, Route, Routes,Router } from "react-router-dom";
+import { Start } from './component/start.tsx';
+
+import { Gift } from './component/gift.tsx';
 
 function App() {
-  const info = useState(
-    [
-      {
-        "name": "kim",
-        "canGet": ["c", "d", "e", "f" ],
-        "gift": ["a", "b"]
-      },
-      {
-        "name": "lee",
-        "canGet": ["a", "b", "e", "f" ],
-        "gift": ["a", "b"]
-      },
-      {
-        "name": "yun",
-        "canGet": ["a", "b", "c", "d" ],
-        "gift": ["a", "b"]
-      }
-    ]
-  )
-  console.log('info =' , info)
   return (
-    <div>
-      kk
-    </div>
+    // <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Start />} />
+        <Route path="/gift" element={<Gift />} />
+      </Routes>
+    // </BrowserRouter>
   );
 }
 

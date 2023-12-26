@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap');
+
+
+body {
+}
+
+.title {
+  color: rgb(143, 2, 2);
+  font-family: 'Mountains of Christmas', serif;
+  font-weight: 900;
+  text-align: center;
+  font-size: 80px;
+}
+
+.subTitle {
+  color: rgb(4, 117, 68);
+  font-family: 'Mountains of Christmas', serif;
+  font-weight: 900;
+  text-align: center;
+  font-size: 50px;
+}
+
+.startBtn {
+  border: none;
+  background-color: rgb(250, 104, 104);
+  padding: 20px;
+  font-weight: bolder;
+  border-radius: 20px;
+  margin-left: 45vw;
+  margin-top: 10px;
+  cursor: pointer;
+}
