@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import React from 'react';
-import styles from '../component/start.module.css';
+import styles from '../component/rule.module.css'
 
-export const Start = () => {
+export const Rule = () => {
   const movePage = useNavigate();
-  const homeClick = () => { movePage('/rule') }
+  const homeClick = () => { movePage('/gift') }
   const [giftList, setGiftList] = useState(['a', 'b', 'c', 'd', 'e', 'f']) //여기 선물도 랜덤으로 진행
   const [peopleNum, setPeopleNum] = useState(0)
   const [info, setInfo] = useState(
@@ -46,10 +46,16 @@ export const Start = () => {
       <div className={styles.subTitle}>
         random-gift-draw   
       </div>
+      <div className={styles.subTitle}>
+        Rule
+      </div>
 
-      <div style={{marginLeft: "40%"}}>
-        <input type='text' placeholder='ex) 2명' className={styles.info}/>
-        <input type='text' placeholder='ex) 선물' className={styles.info}/>
+      <div className={styles.info}>
+        <input type='text' placeholder='ex) 2명' />
+        <input type='text' placeholder='ex) 선물' />
+        <button onClick={() => {
+          setPeopleNum(1)
+        }}>저장</button>
       </div>
 
       <button className={styles.startBtn} onClick={() => {
@@ -62,4 +68,3 @@ export const Start = () => {
   );
 }
 
-export default Start;

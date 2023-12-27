@@ -30,24 +30,3 @@ body {
   margin-top: 10px;
   cursor: pointer;
 }
-
-.items {
-  text-align: center;
-  margin-top: 80px;
-}
-
-.person {
-  width: 500px;
-  height: 500px;
-  border: 10px solid rgb(128, 0, 0);
-  margin: 30px;
-  border-radius: 20px;
-}
-
-.gift {
-  width: 500px;
-  height: 500px;
-  border: 10px solid  rgb(4, 117, 68);
-  margin: 30px;
-  border-radius: 20px;
-}
