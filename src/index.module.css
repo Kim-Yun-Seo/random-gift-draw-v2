@@ -6,7 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: beige;
-  background-image: url('https://images.pexels.com/photos/1303094/pexels-photo-1303094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+  /* background-image: url('https://images.pexels.com/photos/1303094/pexels-photo-1303094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); */
+  background-image: url('http://localhost:3000/background1.png');
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;

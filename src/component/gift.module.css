@@ -1,15 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap');
 
-
-body {
-}
-
 .title {
   color: rgb(143, 2, 2);
   font-family: 'Mountains of Christmas', serif;
   font-weight: 900;
   text-align: center;
   font-size: 80px;
+  margin-top: 60px;
 }
 
 .subTitle {
@@ -22,32 +19,40 @@ body {
 
 .startBtn {
   border: none;
-  background-color: rgb(250, 104, 104);
+  background-color: rgb(175, 48, 48);
+  color: white;
   padding: 20px;
+  margin: 290px;
   font-weight: bolder;
   border-radius: 20px;
-  margin-left: 47%;
-  margin-top: 10px;
+  margin-top: 45px;
+  /* margin-left: 48%; */
   cursor: pointer;
+  width: 150px;
+  font-size: 25px;
+}
+
+.buttons {
+  text-align: center;
 }
 
 .items {
   text-align: center;
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
 .person {
-  width: 500px;
-  height: 500px;
+  width: 512px;
+  height: 512px;
   border: 10px solid rgb(128, 0, 0);
-  margin: 30px;
+  margin: 0px 80px;
   border-radius: 20px;
 }
 
 .gift {
-  width: 500px;
-  height: 500px;
+  width: 512px;
+  height: 512px;
   border: 10px solid  rgb(4, 117, 68);
-  margin: 30px;
+  margin: 0px 80px;
   border-radius: 20px;
 }
