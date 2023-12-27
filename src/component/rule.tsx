@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import React from 'react';
 import styles from '../component/rule.module.css'
@@ -6,64 +5,46 @@ import styles from '../component/rule.module.css'
 export const Rule = () => {
   const movePage = useNavigate();
   const homeClick = () => { movePage('/gift') }
-  const [giftList, setGiftList] = useState(['a', 'b', 'c', 'd', 'e', 'f']) //여기 선물도 랜덤으로 진행
-  const [peopleNum, setPeopleNum] = useState(0)
-  const [info, setInfo] = useState(
-    [
-      {
-        "name": "kim",
-        "canGet": ['c', 'd', 'e', 'f'],
-        "gift": ['a', 'b'],
-        'count': 0
-      },
-      {
-        "name": "lee",
-        "canGet": ['a', 'b','e', 'f'],
-        "gift": ['c', 'd'],
-        'count': 0
-      },
-      {
-        "name": "yun",
-        "canGet": ['a', 'b','e', 'f'],
-        "gift": ['e', 'f'],
-        'count': 0
-      }
-    ]
-  )
-  giftList.forEach(g => {
-    console.log('nowGift =' , g)
-  });
-  //이건 input 받아서 채워넣을 것
-  console.log('info =' , info)
+  const backClick = () => { movePage('/')}
+  
   return (
     <>
-      <div className={styles}>
-        {peopleNum}
-      </div>
       <div className={styles.title}>
-        Merry Christmas
+        Happy New Year
       </div>
       <div className={styles.subTitle}>
         random-gift-draw   
       </div>
       <div className={styles.subTitle}>
-        Rule
+        !  Rule  !
       </div>
-
-      <div className={styles.info}>
-        <input type='text' placeholder='ex) 2명' />
-        <input type='text' placeholder='ex) 선물' />
-        <button onClick={() => {
-          setPeopleNum(1)
-        }}>저장</button>
+      <div className={styles.rules}>
+        1. 순서를 정한다
+        <br />
+        2. 순서대로 선물 뽑기 버튼을 누른다
+        <br />
+        3. 해당 선물의 주인은 일어나서 선물에 대해 설명한다
+        <br />
+        4. 설명한 후 사람뽑기 버튼을 누른다
+        <br />
+        5. 웃으며 선물을 전달한다
+        <br />
+        6. 선물 전달 인증샷을 찍는다
       </div>
-
-      <button className={styles.startBtn} onClick={() => {
-        console.log('start 다음 페이지로 이동 =' , )
-        homeClick()
-      }}>
-        START
-      </button>
+      <div className={styles.buttons}>
+        <button className={styles.startBtn} onClick={() => {
+          console.log('start 다음 페이지로 이동 =' , )
+          homeClick()
+        }}>
+          START
+        </button>
+        <button className={styles.startBtn} onClick={() => {
+          console.log('start 다음 페이지로 이동 =' , )
+          backClick()
+        }}>
+          BACK
+        </button>
+      </div>
     </>
   );
 }
