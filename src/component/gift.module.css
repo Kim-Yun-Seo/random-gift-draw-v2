@@ -22,7 +22,7 @@
   background-color: rgb(175, 48, 48);
   color: white;
   padding: 20px;
-  margin: 290px;
+  margin: 0px 290px ;
   font-weight: bolder;
   border-radius: 20px;
   margin-top: 45px;
@@ -34,6 +34,21 @@
 
 .buttons {
   text-align: center;
+}
+
+.resetBtn {
+  border: none;
+  background-color: rgb(175, 48, 48);
+  color: white;
+  padding: 20px;
+  margin: 0px 290px ;
+  font-weight: bolder;
+  border-radius: 20px;
+  margin-top: 45px;
+  /* margin-left: 48%; */
+  cursor: pointer;
+  width: 150px;
+  font-size: 25px;
 }
 
 .items {

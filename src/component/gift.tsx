@@ -10,11 +10,12 @@ export const Gift = () => {
   const [giftList, setGiftList] = useState(['a', 'b', 'c', 'd', 'e', 'f']) //여기 선물도 랜덤으로 배열
   const [peopleNum, setPeopleNum] = useState(0)
   const [nowPerson, setNowPerson] = useState('/person_ready.svg')
-  const [nowGift, setNowGift] = useState('/present_ready.png')
+  const [nowGift, setNowGift] = useState('/gift_ready.png')
+  const [time, setTime] = useState('')
   let [randomPeople, setRandomPeople] = useState([])
-  // useEffect(()=>{
-  //   console.log('nowPerson =' , nowPerson)
-  // },[nowPerson]); 
+  useEffect(()=>{
+    console.log('nowPerson =' , nowPerson)
+  },[nowPerson]); 
 
   const openPerson = () => {
     setNowPerson('/a.jpeg')
@@ -22,17 +23,19 @@ export const Gift = () => {
 
   const changeGiftImg = () => {
     //버튼 누르면 사진 이미지 바뀌기
-    setNowGift('/b.jpeg')
+    setNowGift(giftImg[giftList[0]])
   }
 
   const giftImg = {
     'a': '/a.jpeg',
     'b': '/b.jpeg',
-    'c': '/c.jpeg',
-    'd': '/d.jpeg',
-    'e': '/e.jpeg',
-    'f': '/f.jpeg',
+    'c': '/c.svg',
+    'd': '/d.svg',
+    'e': '/e.svg',
+    'f': '/f.svg'
   }
+
+
 
   const [info, setInfo] = useState(
     [
@@ -41,21 +44,21 @@ export const Gift = () => {
         "canGet": ['c', 'd', 'e', 'f'],
         "gift": ['a', 'b'],
         "count": 0,
-        "img": ''
+        "img": '/kim.svg'
       },
       {
         "name": "lee",
         "canGet": ['a', 'b','e', 'f'],
         "gift": ['c', 'd'],
         'count': 0,
-        "img": ''
+        "img": '/lee.svg'
       },
       {
         "name": "yun",
         "canGet": ['a', 'b','c', 'd'],
         "gift": ['e', 'f'],
         'count': 0,
-        "img": ''
+        "img": '/yun.svg'
       }
     ]
   )
@@ -81,14 +84,13 @@ export const Gift = () => {
       if (i.name === randomPeople[randomInt]) {
         i.count++
         console.log('당첨자 =' ,randomPeople[randomInt], i.count )
+        console.log(' i[randomPeople[randomInt]]=' ,i.img )
+        setNowPerson(i.img)
       }
     })
     giftList.shift()
     console.log('gL =' , giftList)
     console.log('randomPeople =' , randomPeople)
-    //사진 바꾸기를 해야합니다.
-    //인물 사진 바꾸기
-    //그리고 완료되면 다시 ready.png로 바꾸는 작업
   }
 
   return (
@@ -97,7 +99,7 @@ export const Gift = () => {
         Happy New Year
       </div>
       <div className={styles.subTitle}>
-        random-gift-draw   
+        random-gift-draw
       </div>
       <div className={styles.items}>
         <img className={styles.gift}
@@ -107,26 +109,31 @@ export const Gift = () => {
         src={nowPerson}>
         </img>
       </div>
-
       <div className={styles.buttons}>
         <button className={styles.startBtn} onClick={() => {
-            console.log('start 다음 페이지로 이동 =' , )
+            console.log('start 다음 페이지로 이동 =')
             // backClick()
-            changeGiftImg()
+            setTimeout(function(){ changeGiftImg() }, 1000);//5초 있다가 사진이 드러난다
             //선물사진변경
           }}>
           선물뽑기
         </button>
         <button className={styles.startBtn} onClick={() => {
-          console.log('pick start' , )
-          openPerson()
-          personPick()
-          // 사람 사진 변경
+          console.log('pick start')
+          setTimeout(function(){ personPick() }, 1000);//5초 있다가 사진이 드러난다
           // 노래 재생
           // 효과 재생
         }}>
           사람뽑기
         </button>
+        <div>
+          <button className={styles.resetBtn} onClick={() => {
+            setNowGift('/gift_ready.png')
+            setNowPerson('/person_ready.svg')
+          }}>
+            reset
+          </button>
+        </div>
       </div>
     </>
   );
