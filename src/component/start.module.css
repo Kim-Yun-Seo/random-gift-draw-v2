@@ -4,7 +4,7 @@
 .title {
   color: rgb(143, 2, 2);
   font-family: 'Mountains of Christmas', serif;
-  font-weight: 900;
+  font-weight: 700;
   text-align: center;
   font-size: 80px;
   margin-top: 60px;
@@ -13,7 +13,7 @@
 .subTitle {
   color: rgb(4, 117, 68);
   font-family: 'Mountains of Christmas', serif;
-  font-weight: 900;
+  font-weight: 700;
   text-align: center;
   font-size: 50px;
 }
@@ -26,8 +26,7 @@
   border-radius: 30px;
   padding: 30px;
   margin: 0px 400px;
-  /* width: 1000px; */
-  /* margin-left: 27%; */
+  font-weight: 600;
   margin-top: 40px;
   color: black;
 }

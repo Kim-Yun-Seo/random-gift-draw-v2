@@ -4,11 +4,9 @@ import React from 'react';
 import styles from '../component/gift.module.css'
 
 export const Gift = () => {
-  // const movePage = useNavigate();
-  // const homeClick = () => { movePage('/') }
-  // const backClick = () => { movePage('/rule')}
-  const [giftList, setGiftList] = useState(['a', 'b', 'c', 'd', 'e', 'f']) //여기 선물도 랜덤으로 배열
-  const [peopleNum, setPeopleNum] = useState(0)
+  const movePage = useNavigate();
+  const stealPage = () => { movePage('/steal') }
+  const [giftList, setGiftList] = useState(['c', 'a', 'e', 'b', 'd', 'f'])
   const [nowPerson, setNowPerson] = useState('/person_ready.svg')
   const [nowGift, setNowGift] = useState('/gift_ready.png')
   const [time, setTime] = useState('')
@@ -17,25 +15,19 @@ export const Gift = () => {
     console.log('nowPerson =' , nowPerson)
   },[nowPerson]); 
 
-  const openPerson = () => {
-    setNowPerson('/a.jpeg')
-  }
-
   const changeGiftImg = () => {
     //버튼 누르면 사진 이미지 바뀌기
     setNowGift(giftImg[giftList[0]])
   }
 
   const giftImg = {
-    'a': '/a.jpeg',
-    'b': '/b.jpeg',
+    'a': '/a.svg',
+    'b': '/b.svg',
     'c': '/c.svg',
     'd': '/d.svg',
     'e': '/e.svg',
     'f': '/f.svg'
   }
-
-
 
   const [info, setInfo] = useState(
     [
@@ -113,14 +105,14 @@ export const Gift = () => {
         <button className={styles.startBtn} onClick={() => {
             console.log('start 다음 페이지로 이동 =')
             // backClick()
-            setTimeout(function(){ changeGiftImg() }, 1000);//5초 있다가 사진이 드러난다
+            setTimeout(function(){ changeGiftImg() }, 500); //5초 있다가 사진이 드러난다
             //선물사진변경
           }}>
           선물뽑기
         </button>
         <button className={styles.startBtn} onClick={() => {
           console.log('pick start')
-          setTimeout(function(){ personPick() }, 1000);//5초 있다가 사진이 드러난다
+          setTimeout(function(){ personPick() }, 500); //5초 있다가 사진이 드러난다
           // 노래 재생
           // 효과 재생
         }}>
@@ -134,8 +126,14 @@ export const Gift = () => {
             reset
           </button>
         </div>
+        <div>
+          <button className={styles.stealBtn} onClick={() => {
+            stealPage()
+          }}>
+            next
+          </button>
+        </div>
       </div>
     </>
   );
 }
-
